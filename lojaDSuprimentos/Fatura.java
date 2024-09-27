@@ -30,18 +30,23 @@ public class Fatura{
     }
 
     public int getQuantidadeComprada(){
-        return this.quantidadeComprada
+        return this.quantidadeComprada;
     }
 
     public void setQuantidadeComprada(int quantidadeComprada){
-        this.quantidadeComprada = quantidadeComprada;
+        this.quantidadeComprada = 
+        quantidadeComprada > 0 ? quantidadeComprada : 0;
+    }
+    
+    public void setPrecoPorItem(double precoPorItem){
+        this.precoPorItem = precoPorItem > 0 ? precoPorItem : 0;
     }
 
     public double getPrecoPorItem(){
-        return this.precoPorItem
+        return this.precoPorItem;
     }
 
-    public void setPrecoPorItem(double precoPorItem){
-        this.precoPorItem = precoPorItem;
+    public double getTotalFatura(){
+        return precoPorItem * quantidadeComprada;
     }
 }
